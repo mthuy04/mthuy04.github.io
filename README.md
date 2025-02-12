@@ -1,2 +1,2 @@
 # mthuy04.github
-My personal website
+Learning GitHub is fun
