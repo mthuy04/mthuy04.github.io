@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #ffd3ee;
+}
+nav {
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #333; 
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+article header:hover {
+    color: green;
+    font-size: large;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+h1 {
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    
+}
+.profile {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 20px; /* Khoảng cách giữa ảnh và mô tả */
+}
+
+.profile img {
+    width: 150px; /* Điều chỉnh kích thước ảnh */
+    height: 150px;
+    border-radius: 50%; /* Tạo hình tròn */
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    
+}
+
+h2 {
+    color: #c50069;
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 2px solid#c50069 ;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    }
+h3 {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+section {
+    margin-bottom: 20px;
+}
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
