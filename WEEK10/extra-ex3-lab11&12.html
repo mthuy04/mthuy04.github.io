@@ -5,43 +5,69 @@
 
 <meta charset="utf-8">
 
-<title>Mini calculator</title>
+<title>Dates in month</title>
 
 <script language="javascript">
 
-function calculate() {
+function isLeapYear(n) {
 
-var a = document.frmCal.txta;
+return (n%4==0 && n%100!=0) || n%400==0;
 
-var b = document.frmCal.txtb;
+}
 
-var o = document.frmCal.slto;
+function update() {
 
-var r = document.frmCal.txtr;
+year = document.f.year;
 
-var numberFormat = /^[+]?\d+(\.\d+)?$/;
+month = document.f.month;
 
-if (numberFormat.test(a.value) == false) {
+date = document.f.date;
 
-alert("a must be a number!");
+if(year.value=="" || isNaN(year.value)) {
 
-a.focus();
+date.value = "Year must a number ";
 
-} else if (numberFormat.test(b.value) == false) {
+year.focus();
 
-alert("b must be a number!");
+} else
 
-b.focus();
+switch (month.value) {
 
-} else if ((o.value=="/" || o.value=="%") && parseInt(b.value)==0) {
+case "1":
 
-alert("b can't be 0!");
+case "3":
 
-b.focus();
+case "5":
 
-} else {
+case "7":
 
-r.value = eval(a.value + o.value + b.value);
+case "8":
+
+case "10":
+
+case "12":
+
+date.value = 31;
+
+break;
+
+case "4":
+
+case "6":
+
+case "9":
+
+case "11":
+
+date.value = 30;
+
+break;
+
+case "2":
+
+date.value = isLeapYear(year.value)? 29: 28;
+
+break;
 
 }
 
@@ -51,58 +77,62 @@ r.value = eval(a.value + o.value + b.value);
 
 </head>
 
-<body>
+<body onload="update()">
 
-<form name="frmCal">
+<form name="f">
 
-<table border ="0" align="center">
+<table border="0" align="center">
 
 <tr><td colspan="2" align="center">
 
-<h2>MINI CALCULATOR </h2></td></tr>
+<h2>DATES IN MONTH</h2></td></tr>
 
-<tr><td align="right">a = </td>
+<tr><td align="right">Year: </td>
 
-<td><input name="txta" /></td></tr>
+<td><input name="year" value="2012"
 
-<tr><td align="right">b = </td>
+onblur="update()" /></td>
 
-<td><input name="txtb" /></td></tr>
+</tr>
 
-<tr><td align="right">Operator: </td>
+<tr><td align="right">Month: </td>
 
-<td><select name="slto">
+<td><select name="month" onblur="update()">
 
-<option value="+">+</option>
+<option value="1">01</option>
 
-<option value="-">-</option>
+<option value="2">02</option>
 
-<option value="*">*</option>
+<option value="3">03</option>
 
-<option value="/">/</option>
+<option value="4">04</option>
 
-<option value="%">%</option>
+<option value="5">05</option>
+
+<option value="6">06</option>
+
+<option value="7">07</option>
+
+<option value="8">08</option>
+
+<option value="9">09</option>
+
+<option value="10">10</option>
+
+<option value="11">11</option>
+
+<option value="12">12</option>
 
 </select>
 
 </td></tr>
 
-<tr><td align="right">Result: </td>
+<tr><td align ="right">Date: </td>
 
-<td><input name="txtr" readonly /></td></tr>
+<td><input name="date" readonly="readonly" /></td>
 
-<tr><td colspan="2" align="center">
-
-<input type="button" value="Calculate "
-
-onClick="calculate()">
-
-</td></tr>
+</tr>
 
 </table>
 
-</form>
-
-</body>
-
-</html>
+</form></body></html>
